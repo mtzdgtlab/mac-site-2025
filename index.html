@@ -977,7 +977,7 @@
                       </div>
                       <div class="col-lg-3 col-md-12 mb-20">
                         <input
-                          type="email"
+                          type="text"
                           name="email"
                           placeholder="Your Email"
                           required />
@@ -1150,7 +1150,7 @@
               if (response.ok) {
                 formMessage.textContent =
                   "Thank you for your message! We'll get back to you soon.";
-                formMessage.style.color = "green";
+                formMessage.style.color = "white";
                 contactForm.reset();
               } else {
                 throw new Error("Form submission failed");
@@ -1158,7 +1158,7 @@
             } catch (error) {
               formMessage.textContent =
                 "Sorry, there was an error submitting your message. Please try again.";
-              formMessage.style.color = "red";
+              formMessage.style.color = "yellow";
             }
             formMessage.style.display = "block";
           });
