@@ -3066,7 +3066,9 @@ p.banner-text {
 }
 
 .help-form-area input[type="text"],
-.help-form-area input[type="tel"] {
+.help-form-area input[type="tel"],
+.help-form-area input[type="service"],
+.help-form-area input[type="email"] {
   background: transparent;
   border: 1px solid #fff;
   border-radius: 50px;
