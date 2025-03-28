@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /wp-content/uploads/
+Allow: /wp-content/uploads/
+Sitemap: https://macpavingandsealcoating.com/sitemap.xml
+
