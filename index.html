@@ -1058,10 +1058,14 @@
                   <h4 class="mb-30 footer-title">Our Services</h4>
                   <ul class="service-list">
                     <li><a href="installation.html">Installation</a></li>
-                    <li><a href="resurfacing.html">Resurfacing</a></li>
-                    <li><a href="replacement.html">Replacement</a></li>
                     <li><a href="extension.html">Extension</a></li>
                     <li><a href="sealcoating.html">Sealcoating</a></li>
+                    <li><a href="crack-filling.html">Crack Filling</a></li>
+                    <li>
+                      <a href="pavers-installation.html">Pavers Installation</a>
+                    </li>
+                    <li><a href="belgium-blocks.html">Belgium Blocks</a></li>
+                    <li><a href="walkways.html">Walkways</a></li>
                   </ul>
                 </div>
               </div>
@@ -1150,7 +1154,9 @@
               if (response.ok) {
                 formMessage.textContent =
                   "Thank you for your message! We'll get back to you soon.";
-                formMessage.style.color = "white";
+                formMessage.style.color = "#FFFFFF";
+                formMessage.style.fontWeight = "bold";
+                formMessage.style.fontSize = "1.2em";
                 contactForm.reset();
               } else {
                 throw new Error("Form submission failed");

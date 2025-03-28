@@ -118,7 +118,7 @@
               <div class="offcanvas__logo">
                 <a href="index.html">
                   <img
-                    src="assets/imgs/logo/mac_logo_web-08.png"
+                    src="assets/imgs/logo/mac_logo_web-08.webp"
                     alt="MAC Paving &amp; Sealcoating" />
                 </a>
               </div>
@@ -208,7 +208,7 @@
                 <div class="header-logo">
                   <a href="index.html">
                     <img
-                      src="assets/imgs/logo/mac_logo_web-06.png"
+                      src="assets/imgs/logo/mac_logo_web-06.webp"
                       alt="MAC Paving &amp; Sealcoating" />
                   </a>
                 </div>
@@ -470,10 +470,12 @@
         class="choose-section bg-color-1 section-space-top section-space-bottom p-relative">
         <div
           class="bg-image"
-          data-background="assets/imgs/bg/choose-bg.png"></div>
+          data-background="                    assets/imgs/bg/choose-bg.webp
+"></div>
         <div
           class="shape-image"
-          data-background="assets/imgs/shapes/shape-15.png"></div>
+          data-background="                    assets/imgs/shapes/shape-15.webp
+"></div>
         <div class="small-container">
           <div class="row g-4 justify-content-center text-center">
             <div class="col-12">
@@ -849,10 +851,12 @@
       <div class="footer-main bg-color-1 p-relative">
         <div
           class="footer-shape-1"
-          data-background="assets/imgs/footer/shape-f-1.png"></div>
+          data-background="                    assets/imgs/footer/shape-f-1.webp
+"></div>
         <div
           class="footer-shape-2"
-          data-background="assets/imgs/footer/shape-f-2.png"></div>
+          data-background="                    assets/imgs/footer/shape-f-2.webp
+"></div>
         <div class="footer-top section-space-medium">
           <div class="small-container">
             <div class="row g-4">
@@ -861,7 +865,8 @@
                 <div class="footer-widget-1">
                   <figure class="image">
                     <img
-                      src="assets/imgs/logo/mac_logo_web-01.png"
+                      src="                    assets/imgs/logo/mac_logo_web-01.webp
+"
                       alt="MAC Paving &amp; Sealcoating" />
                   </figure>
                   <p class="mt-40 mb-30">
@@ -893,10 +898,14 @@
                   <h4 class="mb-30 footer-title">Our Services</h4>
                   <ul class="service-list">
                     <li><a href="installation.html">Installation</a></li>
-                    <li><a href="resurfacing.html">Resurfacing</a></li>
-                    <li><a href="replacement.html">Replacement</a></li>
                     <li><a href="extension.html">Extension</a></li>
                     <li><a href="sealcoating.html">Sealcoating</a></li>
+                    <li><a href="crack-filling.html">Crack Filling</a></li>
+                    <li>
+                      <a href="pavers-installation.html">Pavers Installation</a>
+                    </li>
+                    <li><a href="belgium-blocks.html">Belgium Blocks</a></li>
+                    <li><a href="walkways.html">Walkways</a></li>
                   </ul>
                 </div>
               </div>
@@ -954,19 +963,47 @@
     <script src="assets/js/main.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var currentPage = window.location.pathname.split("/").pop();
-        var menuItems = document.querySelectorAll("#mobile-menu > ul > li");
+        // Handle active menu items
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
+        const menuItems = document.querySelectorAll("#mobile-menu > ul > li");
 
-        menuItems.forEach(function (item) {
-          var link = item.querySelector("a");
-          if (link.getAttribute("href") === currentPage) {
+        menuItems.forEach((item) => {
+          const link = item.querySelector("a");
+          if (link && link.getAttribute("href") === currentPage) {
             item.classList.add("active");
           }
         });
 
-        if (currentPage === "" || currentPage === "index.html") {
-          menuItems[0].classList.add("active");
-        }
+        // Handle popup images
+        const popupImages = document.querySelectorAll(".popup-image");
+        popupImages.forEach((image) => {
+          image.addEventListener("error", function () {
+            console.error("Error loading image:", this.href);
+            this.style.display = "none";
+          });
+        });
+
+        // Initialize Magnific Popup
+        $(".popup-image").magnificPopup({
+          type: "image",
+          closeOnContentClick: true,
+          closeBtnInside: false,
+          fixedContentPos: true,
+          mainClass: "mfp-no-margins mfp-with-zoom",
+          image: {
+            verticalFit: true,
+          },
+          zoom: {
+            enabled: true,
+            duration: 300,
+          },
+          callbacks: {
+            elementParse: function (item) {
+              item.src = item.el.attr("href");
+            },
+          },
+        });
       });
     </script>
   </body>
