@@ -510,7 +510,7 @@
                     <!-- Icono de pavimentación -->
                   </div>
                   <h5 class="mt-20 mb-10">
-                    <a href="Pavers.html">Comprehensive Paving Solutions</a>
+                    <a href="pavers.html">Comprehensive Paving Solutions</a>
                   </h5>
                   <p>
                     We offer full range of paving services for commercial and
@@ -817,7 +817,7 @@
                   <figure class="image w-img">
                     <img
                       src="assets/imgs/project/project-1.webp"
-                      alt="driveway_and_paving_services" />
+                      alt="Professional driveway and paving services" />
                   </figure>
                 </div>
               </div>
@@ -959,7 +959,10 @@
                   Need Any Paving Help?
                 </h3>
                 <div class="inner p-relative">
-                  <form action="https://formspree.io/f/mgvalapo" method="POST">
+                  <form
+                    action="https://formspree.io/f/mgvalapo"
+                    method="POST"
+                    target="_blank">
                     <div class="row">
                       <div class="col-lg-3 col-md-12 mb-20">
                         <input
@@ -977,7 +980,7 @@
                       </div>
                       <div class="col-lg-3 col-md-12 mb-20">
                         <input
-                          type="email"
+                          type="text"
                           name="email"
                           placeholder="Your Email"
                           required />
@@ -1115,12 +1118,14 @@
     <script src="assets/js/main.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var currentPage = window.location.pathname.split("/").pop();
-        var menuItems = document.querySelectorAll("#mobile-menu > ul > li");
+        // Handle active menu items
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
+        const menuItems = document.querySelectorAll("#mobile-menu > ul > li");
 
-        menuItems.forEach(function (item) {
-          var link = item.querySelector("a");
-          if (link.getAttribute("href") === currentPage) {
+        menuItems.forEach((item) => {
+          const link = item.querySelector("a");
+          if (link && link.getAttribute("href") === currentPage) {
             item.classList.add("active");
           }
         });
