@@ -1231,4 +1231,40 @@
     // Call the updateCountdown function when the page loads
     window.onload = updateCountdown;
   }
+
+  // Lazy loading optimization
+  document.addEventListener("DOMContentLoaded", function () {
+    // Intersection Observer para lazy loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute("data-src");
+          }
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    // Observar todas las imágenes con loading="lazy"
+    document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+      imageObserver.observe(img);
+    });
+
+    // Preload critical images
+    const preloadImages = [
+      "assets/imgs/logo/mac_logo_web-08.webp",
+      "assets/imgs/logo/mac_logo_web-06.webp",
+    ];
+
+    preloadImages.forEach((src) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  });
 })(jQuery);
