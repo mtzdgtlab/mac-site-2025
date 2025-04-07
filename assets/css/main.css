@@ -3514,12 +3514,12 @@ ul.service-details-page-list li {
 }
 
 .contact-page-form-area {
-  padding: 60px;
+  padding: 30px;
   background: #f8f8f8;
 }
 
 .contact-page-form label {
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 15px;
 }
 
