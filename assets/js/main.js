@@ -1255,8 +1255,8 @@
 
     // Preload critical images
     const preloadImages = [
-      "assets/imgs/logo/mac_logo_web-08.webp",
-      "assets/imgs/logo/mac_logo_web-06.webp",
+      "assets/imgs/logo/mac-logo-web-08.webp",
+      "assets/imgs/logo/mac-logo-web-06.webp",
     ];
 
     preloadImages.forEach((src) => {
